@@ -3,3 +3,17 @@ alias bclumi15='brilcalc lumi --normtag=normtag_2015.json -u /fb -i'
 alias bclumi16='brilcalc lumi --normtag=normtag_2016.json -u /fb -i'
 alias bclumi17='brilcalc lumi --normtag=normtag_2017.json -u /fb -i'
 alias bclumi18='brilcalc lumi --normtag=normtag_2018.json -u /fb -i'
+function bclumi() {
+    if [[ $1 =~ 2015 ]]; then
+        bclumi15 "$@"
+    elif [[ $1 =~ 2016 ]]; then
+        bclumi16 "$@"
+    elif [[ $1 =~ 2017 ]]; then
+        bclumi17 "$@"
+    elif [[ $1 =~ 2018 ]]; then
+        bclumi18 "$@"
+    else
+        echo bad year
+        return 1
+    fi
+}
