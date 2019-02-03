@@ -17,3 +17,6 @@ function bclumi() {
         return 1
     fi
 }
+function bclumisum() {
+    bclumi "$@" | grep -A5 Summary
+}
